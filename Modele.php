@@ -1,16 +1,26 @@
 <?php
 
-// Renvoi la liste de tous les billets, triés par identifiant décroissant
+// Renvoi la liste des billets du blog
+
+function getBillets() {
+    $bdd = getBdd();
+    $billets = $bdd->query('select BIL_ID as id, BIL_DATE as date,' . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET' . ' order by BIL_ID desc');
+    return $billets;
+}
+
+
+// Renvoi les informations sur un billet 
 
 function getBillet($idBillet) {
     $bdd = getBdd();
     $billet = $bdd->prepare('SELECT BIL_ID as id, BIL_DATE as date,' . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET' . ' where BIL_ID=?');
     $billet->execute(array($idBillet));
-    if ($billet->rowCount() == 1)
+    if ($billet->rowCount() > 0)
         return $billet->fetch();  // Accès à la première ligne de résultat
     else 
         throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
 }
+
 
 // Renvoi la liste des commentaires associés à un billet
 
@@ -20,6 +30,7 @@ function getCommentaires($idBillet) {
     $commentaires->execuute(array($idBillet));
     return $commentaires;
 }
+
 
 // Effectue la connexion à la BDD
 // Instancie et renvoi l'objet PDO associé
