@@ -3,15 +3,10 @@
 require 'Modele.php';
 
 try {
-    $billet = getBillet();
+    $billets = getBillets();
     require 'vueAccueil.php';
 } 
 catch (Exception $e) {
-    echo '<html><body>Erreur ! ' . $e->getMesasge() . '</body></html>';
+    $msgErreur = $e->getMessage();
+    require 'vueErreur.php';
 }
-
-$billet = getBillet();
-
-// Affichage
-require 'vueAccueil.php';
-require 'template.php';
