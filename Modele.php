@@ -2,15 +2,24 @@
 
 // Renvoi la liste de tous les billets, triés par identifiant décroissant
 
-function getBillets() {
-    $bdd = new PDO('mysql:host=localhost;dbname=mvcentrainement;charset=utf8', 'root', 'root');
-    $billets = $bdd->prepare('SELECT BIL_ID as id, BIL_DATE as date,' . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET' . ' where BIL_ID=?');
-    return $billets;
+function getBillet($idBillet) {
+    $bdd = getBdd();
+    $billet = $bdd->prepare('SELECT BIL_ID as id, BIL_DATE as date,' . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET' . ' where BIL_ID=?');
+    $billet->execute(array($idBillet));
+    if ($billet->rowCount() == 1)
+        return $billet->fetch();  // Accès à la première ligne de résultat
+    else 
+        throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
 }
 
 // Renvoi la liste des commentaires associés à un billet
 
-
+function getCommentaires($idBillet) {
+    $bdd = getBdd();
+    $commentaires = $bdd->prepare('select COM_ID as id, COM_DATE as date,' . ' COM_AUTEUR as auteur, COM_CONTENU as contenu from T_COMMENTAIRE' . ' where BIL_ID=?');
+    $commentaires->execuute(array($idBillet));
+    return $commentaires;
+}
 
 // Effectue la connexion à la BDD
 // Instancie et renvoi l'objet PDO associé
