@@ -10,7 +10,7 @@ $titre = 'Mon Blog'; ?>
 <?php foreach ($billets as $billet): ?>
 	<article>
 		<header>
-			<a href="<?= "billet.php?id=" . $billet['id'] ?>">
+			<a href="<?= "Controleur.php?id=" . $billet['id'] ?>">
 				<h1 class="titreBillet"><?= $billet ['titre'] ?></h1>
 			</a>
 			<time><?= $billet['date'] ?></time>
