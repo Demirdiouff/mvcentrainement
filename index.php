@@ -1,6 +1,6 @@
 <?php
 
-//------------- Contrôleur (gestion des requêtes entrantes) ----------------//
+//------------- Routeur (point d'arrivée du site) ----------------//
 
 
 require 'Controleur.php';
