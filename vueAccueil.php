@@ -1,4 +1,10 @@
-<?php $titre = 'Mon Blog'; ?>
+<?php 
+
+
+//------------- Vue (affichage à l'utilisateur, renvoi à template.php) ----------------//
+
+
+$titre = 'Mon Blog'; ?>
 
 <?php ob_start(); ?>
 <?php foreach ($billets as $billet): ?>

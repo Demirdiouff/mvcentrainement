@@ -1,5 +1,9 @@
 <?php
 
+
+//------------- Modèle (accès aux données) ----------------//
+
+
 // Renvoi la liste des billets du blog
 
 function getBillets() {

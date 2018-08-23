@@ -1,4 +1,8 @@
 <?php
+
+//------------- Contrôleur (gestion des requêtes entrantes) ----------------//
+
+
 // Accès aux données
 require 'Modele.php';
 

@@ -1,4 +1,10 @@
-<?php $titre = "Mon Blog - " . $billet['titre']; ?>
+<?php 
+
+
+//------------- Vue (affichage à l'utilisateur, renvoi à template.php) ----------------//
+
+
+$titre = "Mon Blog - " . $billet['titre']; ?>
 
 <?php ob_start(); ?>
 <article> 

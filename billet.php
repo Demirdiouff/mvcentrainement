@@ -1,5 +1,9 @@
 <?php
 
+
+//------------- Contrôleur (gestion des requêtes entrantes) ----------------//
+
+
 require 'Modele.php';
 
 try {
