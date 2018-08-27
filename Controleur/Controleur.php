@@ -4,7 +4,7 @@
 //------------- Contrôleur frontal (point d'entrée unique au site, va centraliser la gestion des requêtes entrantes et afficher les vues en question selon la demande) ----------------//
 
 
-require 'Modele/Modele.php';
+require_once 'Modele/Modele.php';
 
 // Affiche la liste de tous les billets du blog
 function accueil() {
