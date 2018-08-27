@@ -4,9 +4,8 @@
 //------------- Vue (affichage à l'utilisateur, renvoi à template.php) ----------------//
 
 
-$titre = 'Mon Blog'; ?>
+$this->titre = 'Mon Blog'; ?>
 
-<?php ob_start(); ?>
 <?php foreach ($billets as $billet): ?>
 	<article>
 		<header>
@@ -19,7 +18,6 @@ $titre = 'Mon Blog'; ?>
 	</article>
 	<hr />
 <?php endforeach; ?>
-<?php $contenu = ob_get_clean(); ?>
 
 <?php require 'template.php'; ?>
 
