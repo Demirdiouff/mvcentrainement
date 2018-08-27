@@ -1,6 +1,5 @@
 <?php
 
-
 // ------------- Modèle (accès aux données) ----------------//
 
 class Modele
