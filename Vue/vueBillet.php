@@ -4,9 +4,8 @@
 //------------- Vue (affichage à l'utilisateur, renvoi à template.php) ----------------//
 
 
-$titre = "Mon Blog - " . $billet['titre']; ?>
+$titre = "Un billet simple pour l'\Alaska - " . $billet['titre']; ?>
 
-<?php ob_start(); ?>
 <article> 
 	<header>
 		<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
@@ -22,6 +21,4 @@ $titre = "Mon Blog - " . $billet['titre']; ?>
 	<p><?= $commentaire['auteur'] ?> dit :</p>
 	<p><?= $commentaire['contenu'] ?></p>
 <?php endforeach; ?>
-<?php $contenu = ob_get_clean(); ?>
 
-<?php require 'template.php'; ?>
