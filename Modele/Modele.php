@@ -23,7 +23,7 @@ abstract class Modele
     // Renvoi un objet de connexion à la BDD en initialisant la connexion au besoin
     // Instancie et renvoi l'objet PDO associé
     
-    private function getBdd() {
+    protected function getBdd() {
         if ($this->bdd == null) {
             // Création de la connexion 
             $this->bdd = new PDO('mysql:host=localhost;dbname=mvcentrainement;charset=utf8', 'root', 'root', array(

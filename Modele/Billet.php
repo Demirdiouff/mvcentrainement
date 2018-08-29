@@ -8,7 +8,7 @@ class Billet extends Modele {
     
     public function getBillets()
     {
-        $bdd = getBdd();
+        $bdd = $this->getBdd();
         $billets = $bdd->query('select BIL_ID as id, BIL_DATE as date,' . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET' . ' order by BIL_ID desc');
         return $billets;
     }
@@ -16,7 +16,7 @@ class Billet extends Modele {
     // Renvoi les informations sur un billet
     public function getBillet($idBillet)
     {
-        $bdd = getBdd();
+        $bdd = $this->getBdd();
         $billet = $bdd->prepare('SELECT BIL_ID as id, BIL_DATE as date,' . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET' . ' where BIL_ID=?');
         $billet->execute(array(
             $idBillet
