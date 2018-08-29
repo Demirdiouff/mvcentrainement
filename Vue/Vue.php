@@ -1,5 +1,7 @@
 <?php
 
+require_once "Framework/Debug.php";
+
 class Vue {
     
     // Nom du fichier associé à la vue 
@@ -17,8 +19,11 @@ class Vue {
     public function generer($donnees) {
         // Génération de la partie spécifique de la vue
         $contenu = $this->genererFichier($this->fichier, $donnees);
+        //echo (">>>>>>>>>>>>>>>>>>>>>>> $contenu <<<<<<<<<<<<<<<<<<<<<<<<<<");
         //Génération du gabarit commun utilisant la partie spécifique
-        $vue = $this->genererFichier('Vue/template.php', array('titre' => $this-titre, 'contenu' => $contenu));
+        $table = array('titre' => $this->titre, 'contenu' => $contenu);
+        //Debug::printr($table);
+        $vue = $this->genererFichier('Vue/template.php', array('titre' => $this->titre, 'contenu' => $contenu));
         // Renvoi de la vue au navigateur
         echo $vue;
     }
@@ -28,13 +33,18 @@ class Vue {
         if (file_exists($fichier)) {
             // Rend les éléments du tableau $donnees accessibles dans la vue
             extract($donnees);
+            //Debug::printr($fichier, "donnees:");
             // Démarrage de la temporisation de sortie
             ob_start();
             // Inclut le fichier vue
             // Son résultat est placé dans le tampon de sortie
             require $fichier;
+            //echo "toto";
             // Arrêt de la temporisation et renvoi du tampon de sortie
-            return ob_get_clean();
+            $contenu = ob_get_clean();
+            
+            return $contenu;
+            //return ob_get_clean();
         }
         else {
             throw new Exception("Fichier '$fichier' introuvable");

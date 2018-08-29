@@ -4,7 +4,7 @@
 //------------- Vue (affichage à l'utilisateur, renvoi à template.php) ----------------//
 
 
-$this->titre = 'Mon Blog'; ?>
+$this->titre = 'Un billet simple pour l\'Alaska'; ?>
 
 <?php foreach ($billets as $billet): ?>
 	<article>
@@ -18,7 +18,5 @@ $this->titre = 'Mon Blog'; ?>
 	</article>
 	<hr />
 <?php endforeach; ?>
-
-<?php require 'template.php'; ?>
 
 
