@@ -6,6 +6,9 @@
 
 require_once 'Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurPropos.php';
+require_once 'Controleur/ControleurRoman.php';
+require_once 'Controleur/ControleurCommentRoman.php';
+require_once 'Controleur/ControleurContact.php';
 require_once 'Vue/Vue.php';
 
 
@@ -13,7 +16,9 @@ class Routeur {
     
     private $ctrlAccueil;
     private $ctrlPropos;
-    //private $ctrlBillet;
+    private $ctrlRoman;
+    private $ctrlCommentRoman;
+    private $ctrlContact;
     
     public function __construct() {
         
@@ -34,8 +39,19 @@ class Routeur {
                  case 'apropos':
                      $this->ctrlPropos = new ControleurPropos();
                      $this->ctrlPropos->apropos();
-                    // faire quelque chose
                     break;
+                 case 'roman':
+                     $this->ctrlRoman = new ControleurRoman();
+                     $this->ctrlRoman->roman();
+                    break;
+                 case 'commentRoman':
+                     $this->ctrlCommentRoman = new ControleurCommentRoman();
+                     $this->ctrlCommentRoman->commentRoman();
+                 case 'contact':
+                     $this->ctrlContact = new ControleurContact();
+                     $this->ctrlContact->contact();
+                    break;
+                    // faire quelque chose
                  default:
                      throw new Exception("Action non valide");
              }

@@ -7,10 +7,10 @@ class ControleurPropos {
     
     
     public function __construct() {
-        //$this->billet = new Billet();
+        
     }
     
-    // Affiche la liste de tous les billets du blog
+    // Affiche la page les propos de Jean Forteroche
     public function apropos() {
         //$billets = $this->billet->getBillets();
         $vue = new Vue("Propos");
