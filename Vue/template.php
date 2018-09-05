@@ -46,7 +46,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="index.php">Accueil</a></li>
-                  <li><a href="aPropos.php">A propos</a></li>
+                  <li><a href="index.php?action=apropos">A propos</a></li>
                   <li><a href="roman.php">Roman</a></li>
                   <li><a href="contact.php">Contact</a></li>
                 </ul>
@@ -54,13 +54,7 @@
             </div>
           </div>
 
-          <div class="inner cover">
-            <h1 class="cover-heading">Jean Forteroche</h1>
-            <p class="lead">Un billet simple pour l'Alaska est un roman qui sera écrit entièrement en ligne via le biais de ce site web. Un chapitre sera publié chaque semaine. N'hésitez pas à donner vos retours.</p>
-            <p class="lead">
-              <a href="aPropos.php" class="btn btn-lg btn-default">En savoir plus</a>
-            </p>
-          </div>
+		<?php echo $contenu; ?>
 
           <div class="mastfoot">
             <div class="inner">

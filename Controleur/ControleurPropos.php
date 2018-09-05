@@ -3,7 +3,7 @@
 require_once 'Modele/Billet.php';
 require_once 'Vue/Vue.php';
 
-class ControleurAccueil {
+class ControleurPropos {
     
     
     public function __construct() {
@@ -11,9 +11,9 @@ class ControleurAccueil {
     }
     
     // Affiche la liste de tous les billets du blog
-    public function accueil() {
+    public function apropos() {
         //$billets = $this->billet->getBillets();
-        $vue = new Vue("Accueil");
+        $vue = new Vue("Propos");
         $vue->generer(array());
         //$vue->generer(array('billets' => $billets));
     }
