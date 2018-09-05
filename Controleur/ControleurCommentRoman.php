@@ -18,9 +18,7 @@ class ControleurCommentRoman {
     public function commentRoman($idBillet) {
         $dataBillet = $this->billet->getBillet($idBillet);
         $commentaires = $this->commentaire->getCommentaires($idBillet);
-        echo "CCCCCCCCCC";
         $vue = new Vue("CommentRoman");
-        echo "BBBBBBBBBB";
         $vue->generer(array('billet' => $dataBillet, 'commentaires' => $commentaires));
     }
 }
