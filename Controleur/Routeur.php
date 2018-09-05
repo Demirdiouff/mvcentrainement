@@ -46,7 +46,7 @@ class Routeur {
                     break;
                  case 'commentRoman':
                      $this->ctrlCommentRoman = new ControleurCommentRoman();
-                     $this->ctrlCommentRoman->commentRoman();
+                     $this->ctrlCommentRoman->commentRoman($idBillet);
                  case 'contact':
                      $this->ctrlContact = new ControleurContact();
                      $this->ctrlContact->contact();
