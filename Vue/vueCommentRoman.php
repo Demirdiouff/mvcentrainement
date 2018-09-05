@@ -1,7 +1,7 @@
 <?php 
 
 
-//------------- Vue (affichage à l'utilisateur, renvoi à template.php) ----------------//
+//------------- Vue (affichage à l'utilisateur) ----------------//
 
 
 $titre = "Un billet simple pour l'\Alaska - " . $billet['titre']; ?>

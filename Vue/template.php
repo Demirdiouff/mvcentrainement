@@ -47,8 +47,8 @@
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="index.php">Accueil</a></li>
                   <li><a href="index.php?action=apropos">A propos</a></li>
-                  <li><a href="roman.php">Roman</a></li>
-                  <li><a href="contact.php">Contact</a></li>
+                  <li><a href="index.php?action=roman">Roman</a></li>
+                  <li><a href="index.php?action=contact">Contact</a></li>
                 </ul>
               </nav>
             </div>
