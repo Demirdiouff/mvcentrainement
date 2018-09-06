@@ -34,7 +34,7 @@ class Routeur
                 
                 $idBillet = 'billet';
                 if (isset($_GET['action'])) {
-                    $idBillet = $_GET['action'];
+                    $idBillet = $_GET['id'];
                 }
             }
             switch ($action) {
