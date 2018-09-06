@@ -11,6 +11,6 @@
 		écrit entièrement en ligne via le biais de ce site web. Un chapitre
 		sera publié chaque semaine. N'hésitez pas à donner vos retours.</p>
 	<p class="lead">
-		<a href="aPropos.php" class="btn btn-lg btn-default">En savoir plus</a>
+		<a href="index.php?action=apropos" class="btn btn-lg btn-default">En savoir plus</a>
 	</p>
 </div>
