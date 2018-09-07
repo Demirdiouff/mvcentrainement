@@ -21,4 +21,11 @@ class ControleurCommentRoman {
         $vue = new Vue("CommentRoman");
         $vue->generer(array('billet' => $dataBillet, 'commentaires' => $commentaires));
     }
+    
+    public function commenter($auteur, $contenu, $idBillet) {
+        // Enregistrement du commentaire
+        $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
+        // Actualisation de la page pour faire afficher le commentaire
+        $this->billet($idBillet);
+    }
 }
