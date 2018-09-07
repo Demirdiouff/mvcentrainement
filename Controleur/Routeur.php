@@ -24,7 +24,9 @@ class Routeur
     private $ctrlContact;
 
     public function __construct()
-    {}
+    {
+        
+    }
 
     // Traite une requête entrante
     public function routerRequete()
@@ -39,6 +41,10 @@ class Routeur
                     $idBillet = $_GET['id'];
                 }
                 
+                // je pense qu'il faut rajouter une partie par ici avec $auteur, $contenu ... comme ligne 39 mais,
+                // je ne sais pas comment l'écrire pour quelque chose qui va "s'envoyer" 
+                // et a mon avis c'est peut être pas $action qu'il faut mettre, mais je ne visualise pas comment faire autrement ... 
+                // (PS: je suis à peu près à 45min sur ce problème avec différents tests ^^)
                 $action = 'commenter';
                 if (isset($_GET['action'])) {
                     $auteur = $_POST['auteur'];
