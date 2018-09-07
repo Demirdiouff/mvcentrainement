@@ -163,3 +163,16 @@ body {
     width: 700px;
   }
 }
+
+#txtCommentaire {
+    width: 50%;
+    color: black;
+}
+
+input#auteur {
+    color: black;
+}
+
+input#validerComment {
+    color: black;
+}
