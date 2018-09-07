@@ -18,6 +18,8 @@ class Routeur
     private $ctrlRoman;
 
     private $ctrlCommentRoman;
+    
+    private $ctrlAjoutCommentRoman;
 
     private $ctrlContact;
 
@@ -36,6 +38,14 @@ class Routeur
                 if (isset($_GET['action'])) {
                     $idBillet = $_GET['id'];
                 }
+                
+                $action = 'commenter';
+                if (isset($_GET['action'])) {
+                    $auteur = $_POST['auteur'];
+                    $contenu = $_POST['contenu'];
+                    $idBillet = $_POST['id'];
+                }
+                
             }
             switch ($action) {
                 case 'accueil':
@@ -53,6 +63,12 @@ class Routeur
                 case 'commentRoman':
                     $this->ctrlCommentRoman = new ControleurCommentRoman();
                     $this->ctrlCommentRoman->commentRoman($idBillet);
+                case 'commenter':
+                    $this->ctrlAjoutCommentRoman = new ControleurCommentRoman();
+                    $auteur = $this->ctrlAjoutCommentRoman($_POST, 'auteur');
+                    $contenu = $this->ctrlAjoutCommentRoman($_POST, 'contenu');
+                    $idBillet = $this->ctrlAjoutCommentRoman($_POST, 'idBillet');
+                    $this->ctrlAjoutCommentRoman->commenter($auteur, $contenu, $idBillet);
                 case 'contact':
                     $this->ctrlContact = new ControleurContact();
                     $this->ctrlContact->contact();
